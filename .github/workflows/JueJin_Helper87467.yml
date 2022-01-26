@@ -1,4 +1,4 @@
-name: 掘金自动签到和挖矿
+name: JueJin_Helper87467
 on:
   push:
   schedule:
