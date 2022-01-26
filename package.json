@@ -5,7 +5,9 @@
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.2",
-    "jsonwebtoken": "^8.5.1"
+    "jsonwebtoken": "^8.5.1",
+    "node-fetch": "^2.6.1",
+    "nodemailer": "^6.6.3"
   },
   "devDependencies": {},
   "description": "掘金每日自动签到，自动抽奖",
