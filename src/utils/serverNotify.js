@@ -9,10 +9,10 @@ const config = require("./config.js");
 module.exports = function bot(message) {
   console.log(config.TO);
   sendMail({
-    form: "掘金",
+    form: config.USER,
     to: config.TO,
     subject: config.TEL + "定时任务",
-    html: message,
+    text: message,
   }).catch(error => {
     console.log(`发送失败 => ${error}`);
   });
