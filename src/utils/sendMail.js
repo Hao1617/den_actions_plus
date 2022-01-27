@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const config = require("./config.js");
 
 const sendMail = async data => {
   let transporter = nodemailer.createTransport({
@@ -6,11 +7,11 @@ const sendMail = async data => {
     port: "465",
     secureConnection: true,
     auth: {
-      user: process.env.user,
-      pass: process.env.pass,
+      user: config.USER,
+      pass: config.PASS,
     },
   });
-  data.from = `"${data.from}" ${process.env.user}`;
+  data.from = `"${data.from}" ${config.USER}`;
 
   await transporter.sendMail(data);
 };
