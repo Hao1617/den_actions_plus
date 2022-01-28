@@ -11,7 +11,7 @@ const sendMail = async data => {
       pass: config.PASS,
     },
   });
-//   data.from = `"${data.from}" ${config.USER}`;
+  data.from = `"${data.from}" ${config.USER}`;
 
   await transporter.sendMail(data);
 };
