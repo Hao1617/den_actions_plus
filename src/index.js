@@ -11,26 +11,6 @@ const miningApi = require("./api/mining")();
 const jwt = require("jsonwebtoken");
 const firstData = require("./utils/first");
 
-if (!COOKIE) {
-  message("获取不到cookie，请检查设置");
-} else {
-  async function junJin() {
-    try {
-      // 先执行签到、抽奖以及沾喜气
-      await jueJinApi.checkIn(); // 抽奖一次
-      const drawResult = await jueJinApi.drawApi();
-      const dipParams = { lottery_history_id: "7052109119238438925" };
-      const dipResult = await jueJinApi.dipLucky(dipParams);
-      message(
-        `抽奖成功，获得：${drawResult.lottery_name}; 获取幸运点${dipResult.dip_value}, 当前幸运点${dipResult.total_value}`
-      );
-    } catch (e) {
-      message(`有异常，请手动操作,${e.message}`);
-    }
-  }
-  junJin().then(() => {});
-}
-
 let juejinUid = "";
 
 if (!(COOKIE && TOKEN)) {
@@ -55,7 +35,7 @@ if (!(COOKIE && TOKEN)) {
   }
   getInfo().then(() => {
     if (todayDiamond < todayLimitDiamond) {
-      playGame().then(() => {});
+      playGame().then(() => { });
     }
   });
 
@@ -107,8 +87,22 @@ if (!(COOKIE && TOKEN)) {
         if (todayDiamond < todayLimitDiamond) {
           playGame();
         } else {
+          // 先执行签到、抽奖以及沾喜气
+          await jueJinApi.checkIn(); // 抽奖一次
+          const drawResult = await jueJinApi.drawApi();
+          const dipParams = { lottery_history_id: "7052109119238438925" };
+          const dipResult = await jueJinApi.dipLucky(dipParams);
+          const scoreAll = await jueJinApi.scoreAll();
           message(
-            `今日限制矿石${res.userInfo.todayLimitDiamond},已获取矿石${res.userInfo.todayDiamond}`
+            `
+            <h1>自动签到通知</h1>
+            <p>恭喜抽到：${drawResult.lottery_name}</p>
+            <p>获取幸运点：${dipResult.dip_value}</p>
+            <p>当前幸运点：${dipResult.total_value}</p>
+            <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
+            <p>已获取矿石：${res.userInfo.todayDiamond}</p>
+            <p>当前积分：${scoreAll.data}</p>
+            `
           );
         }
       });
@@ -126,8 +120,22 @@ if (!(COOKIE && TOKEN)) {
         if (todayDiamond < todayLimitDiamond) {
           playGame();
         } else {
+          // 先执行签到、抽奖以及沾喜气
+          await jueJinApi.checkIn(); // 抽奖一次
+          const drawResult = await jueJinApi.drawApi();
+          const dipParams = { lottery_history_id: "7052109119238438925" };
+          const dipResult = await jueJinApi.dipLucky(dipParams);
+          const scoreAll = await jueJinApi.scoreAll();
           message(
-            `今日限制矿石${res.userInfo.todayLimitDiamond},已获取矿石${res.userInfo.todayDiamond}`
+            `
+            <h1>自动签到通知</h1>
+            <p>恭喜抽到：${drawResult.lottery_name}</p>
+            <p>获取幸运点：${dipResult.dip_value}</p>
+            <p>当前幸运点：${dipResult.total_value}</p>
+            <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
+            <p>已获取矿石：${res.userInfo.todayDiamond}</p>
+            <p>当前积分：${scoreAll.data}</p>
+            `
           );
         }
       });
