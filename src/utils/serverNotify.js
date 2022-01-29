@@ -7,12 +7,11 @@ const sendMail = require("./sendMail");
 const config = require("./config.js");
 
 module.exports = function bot(message) {
-  console.log(config.TO);
   sendMail({
     form: config.USER,
     to: config.TO,
     subject: config.TEL + "定时任务",
-    text: message,
+    html: message,
   }).catch(error => {
     console.log(`发送失败 => ${error}`);
   });
