@@ -8,7 +8,7 @@ const config = require("./config.js");
 
 module.exports = function bot(message) {
   sendMail({
-    form: config.USER,
+    form: "掘金",
     to: config.TO,
     subject: config.TEL + "定时任务",
     html: message,
