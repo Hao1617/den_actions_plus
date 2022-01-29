@@ -87,23 +87,30 @@ if (!(COOKIE && TOKEN)) {
         if (todayDiamond < todayLimitDiamond) {
           playGame();
         } else {
-          // 先执行签到、抽奖以及沾喜气
-          await jueJinApi.checkIn(); // 抽奖一次
-          const drawResult = await jueJinApi.drawApi();
-          const dipParams = { lottery_history_id: "7052109119238438925" };
-          const dipResult = await jueJinApi.dipLucky(dipParams);
-          const scoreAll = await jueJinApi.scoreAll();
-          message(
-            `
-            <h1>自动签到通知</h1>
-            <p>恭喜抽到：${drawResult.lottery_name}</p>
-            <p>获取幸运点：${dipResult.dip_value}</p>
-            <p>当前幸运点：${dipResult.total_value}</p>
-            <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
-            <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-            <p>当前积分：${scoreAll.data}</p>
-            `
-          );
+          async function junJin() {
+            try {
+              // 先执行签到、抽奖以及沾喜气
+              await jueJinApi.checkIn(); // 抽奖一次
+              const drawResult = await jueJinApi.drawApi();
+              const dipParams = { lottery_history_id: "7052109119238438925" };
+              const dipResult = await jueJinApi.dipLucky(dipParams);
+              const scoreAll = await jueJinApi.scoreAll();
+              message(
+                `
+                <h1>自动签到通知</h1>
+                <p>恭喜抽到：${drawResult.lottery_name}</p>
+                <p>获取幸运点：${dipResult.dip_value}</p>
+                <p>当前幸运点：${dipResult.total_value}</p>
+                <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
+                <p>已获取矿石：${res.userInfo.todayDiamond}</p>
+                <p>当前积分：${scoreAll.data}</p>
+                `
+              );
+            } catch (e) {
+              message(`有异常，请手动操作,${e.message}`);
+            }
+          }
+          junJin().then(() => {});
         }
       });
     } catch (e) {
@@ -120,23 +127,30 @@ if (!(COOKIE && TOKEN)) {
         if (todayDiamond < todayLimitDiamond) {
           playGame();
         } else {
-          // 先执行签到、抽奖以及沾喜气
-          await jueJinApi.checkIn(); // 抽奖一次
-          const drawResult = await jueJinApi.drawApi();
-          const dipParams = { lottery_history_id: "7052109119238438925" };
-          const dipResult = await jueJinApi.dipLucky(dipParams);
-          const scoreAll = await jueJinApi.scoreAll();
-          message(
-            `
-            <h1>自动签到通知</h1>
-            <p>恭喜抽到：${drawResult.lottery_name}</p>
-            <p>获取幸运点：${dipResult.dip_value}</p>
-            <p>当前幸运点：${dipResult.total_value}</p>
-            <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
-            <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-            <p>当前积分：${scoreAll.data}</p>
-            `
-          );
+          async function junJin() {
+            try {
+              // 先执行签到、抽奖以及沾喜气
+              await jueJinApi.checkIn(); // 抽奖一次
+              const drawResult = await jueJinApi.drawApi();
+              const dipParams = { lottery_history_id: "7052109119238438925" };
+              const dipResult = await jueJinApi.dipLucky(dipParams);
+              const scoreAll = await jueJinApi.scoreAll();
+              message(
+                `
+                <h1>自动签到通知</h1>
+                <p>恭喜抽到：${drawResult.lottery_name}</p>
+                <p>获取幸运点：${dipResult.dip_value}</p>
+                <p>当前幸运点：${dipResult.total_value}</p>
+                <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
+                <p>已获取矿石：${res.userInfo.todayDiamond}</p>
+                <p>当前积分：${scoreAll.data}</p>
+                `
+              );
+            } catch (e) {
+              message(`有异常，请手动操作,${e.message}`);
+            }
+          }
+          junJin().then(() => {});
         }
       });
     }
