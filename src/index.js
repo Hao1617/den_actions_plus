@@ -13,8 +13,6 @@ const firstData = require("./utils/first");
 
 let juejinUid = "";
 
-              const scoreAll = jueJinApi.scoreAll();
-console.log(scoreAll);
 if (!(COOKIE && TOKEN)) {
   message("获取不到游戏必须得COOKIE和TOKEN，请检查设置");
 } else {
