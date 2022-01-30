@@ -43,11 +43,10 @@ module.exports = function () {
     /**
      * 查询积分
      */
-    scoreAll: function (params) {
+    scoreAll: function () {
       return request({
         url: "https://api.juejin.cn/growth_api/v1/get_cur_point",
         method: "get",
-        data: params,
         headers: {
           cookie: COOKIE,
         },
