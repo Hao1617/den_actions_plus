@@ -103,7 +103,7 @@ if (!(COOKIE && TOKEN)) {
                 <p>当前幸运点：${dipResult.total_value}</p>
                 <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
                 <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-                <p>当前积分：${scoreAll.data}</p>
+                <p>当前积分：${scoreAll}</p>
                 `
               );
             } catch (e) {
@@ -143,7 +143,7 @@ if (!(COOKIE && TOKEN)) {
                 <p>当前幸运点：${dipResult.total_value}</p>
                 <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
                 <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-                <p>当前积分：${scoreAll.data}</p>
+                <p>当前积分：${scoreAll}</p>
                 `
               );
             } catch (e) {
