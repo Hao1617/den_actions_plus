@@ -99,11 +99,11 @@ if (!(COOKIE && TOKEN)) {
                 `
                 <h1>自动签到通知</h1>
                 <p>恭喜抽到：${drawResult.lottery_name}</p>
-                <p>获取幸运点：${dipResult.dip_value}</p>
-                <p>当前幸运点：${dipResult.total_value}</p>
+                <p>当前积分：${scoreAll}</p>
                 <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
                 <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-                <p>当前积分：<strong>${scoreAll}</strong></p>
+                <p>获取幸运点：${dipResult.dip_value}</p>
+                <p>当前幸运点：${dipResult.total_value}</p>
                 `
               );
             } catch (e) {
@@ -139,11 +139,11 @@ if (!(COOKIE && TOKEN)) {
                 `
                 <h1>自动签到通知</h1>
                 <p>恭喜抽到：${drawResult.lottery_name}</p>
-                <p>获取幸运点：${dipResult.dip_value}</p>
-                <p>当前幸运点：${dipResult.total_value}</p>
+                <p>当前积分：${scoreAll}</p>
                 <p>今日限制矿石：${res.userInfo.todayLimitDiamond}</p>
                 <p>已获取矿石：${res.userInfo.todayDiamond}</p>
-                <p>当前积分：<strong>${scoreAll}</strong></p>
+                <p>获取幸运点：${dipResult.dip_value}</p>
+                <p>当前幸运点：${dipResult.total_value}</p>
                 `
               );
             } catch (e) {
