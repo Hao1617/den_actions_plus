@@ -24,11 +24,3 @@
 ### 5.允许 Github Actions 工作流。
 
 ![image-20220111131659411](./static/img/5.png)
-
-### 6.消息通知
-
-#### server酱
-
-依次点击【Setting】、【Secrets】、【New repository secret】，添加SERVERID的名称和值即可
-
-![image-20220111131800050](./static/img/6.png)
