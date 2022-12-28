@@ -2,7 +2,7 @@ name: JueJin_Helper76765
 on:
   # push:
   schedule:
-    - cron: "0 20 * * *" # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 每天早上七点自动执行
+    - cron: "0 20 * * *" # `分 时 天 月 周` 时按照标准时间 北京时间=标准时间+8 每天早上四点自动执行
 
   workflow_dispatch:
 
