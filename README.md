@@ -19,6 +19,3 @@
 
 ![image-20220111131432067](./static/img/4.png)
 
-### 5.允许 Github Actions  工作流。
- 
-![image-20220111131659411](./static/img/5.png)
